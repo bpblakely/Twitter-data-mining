@@ -67,3 +67,26 @@ def extract_tweets(tweets,region= None):
                                            'place','coordinates','user_location','region','retweet','original_location',
                                            'original_date','original_tweet_id'])
     return df
+
+# read region text file (check file for the format)
+def extract_locations_from_txt(coordinates_path):
+    region = []
+    coordinates = []
+    temp=[]
+    next_is_region = True
+    with open(coordinates_path) as f:
+        for line in f:
+            line = line.strip()
+            if next_is_region:
+                region.append(line)
+                next_is_region = False
+            elif line == "":
+                next_is_region = True
+                coordinates.append(temp)
+                temp=[]
+            else:
+                temp.append(line)
+        coordinates.append(temp) # covers the last set of circles
+    df = pd.DataFrame(region,columns=['region'])
+    df['circles'] = coordinates
+    return df
