@@ -91,7 +91,7 @@ for region,circles in locations.values:
 runtime = datetime.now()-s
 print(f'Total queries used: {query_count}')
 print(f'Total tweets collected: {total_tweet_count}')
-text_my_cell(f'Twitter collection finished collecting tweets from {date} with a total of {int_comma(total_tweet_count)} tweets collected\ntotal run time: {runtime}',1)
+text_my_cell(f'Twitter collection finished collecting tweets from {date} with a total of {int_comma(total_tweet_count)} tweets collected\ntotal run time: {runtime}',0)
 with open(output_folder+'//'+date+'//log.txt','w+') as f:
     f.write(f'total tweet count: {total_tweet_count}\ntotal run time: {runtime}\n\n')
     f.write('Region: number_of_tweets\n')
