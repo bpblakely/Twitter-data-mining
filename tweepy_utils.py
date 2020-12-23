@@ -47,7 +47,7 @@ def extract_tweets(tweets,region= None):
              tweet.user.location,
              region]
         try: # If it's a retweet, get some metadata
-            tweet.retweeted_status
+            tweet.retweeted_status # Immediately fails if the tweet is not a retweet
             data.append(1)
             data.append(tweet.retweeted_status.user.location)
             data.append(tweet.retweeted_status.created_at)
