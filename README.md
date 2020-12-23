@@ -1,7 +1,7 @@
 # Twitter-data-mining
 Short scripts to efficiently scrap tweets off Twitter using Tweepy
 
-# Main Feature: Intelligent Account Weaving
+# Intelligent Account Weaving
 Collect data from Twitter's Search API using multiple accounts
 
 Each account has a maximum of 180 queries per 15 minutes, where each query can have 100 tweets (18,000 tweets per 15 minutes per account)
